@@ -1,55 +1,125 @@
-# Claude Code 引き継ぎプロンプト
-
-以下をClaude Codeに貼り付けてください。
-
----
+# Claude Code 引き継ぎドキュメント
 
 ## プロジェクト概要
 
-Python講座「挫折しない・壊さないPython入門 ─ AIと一緒に学ぶ、GASの次のステップ」の企画ドキュメント一式です。
+Python講座「挫折しない・壊さないPython入門 ─ AIと一緒に学ぶ、GASの次のステップ」
 
-添付のzipファイルを解凍して、GitHubリポジトリ `https://github.com/taolido/gaspython` にプッシュしてください。
+## 現在のステータス
+
+### 完了済み
+- [x] 全6章（第0章〜第5章）の本番品質コンテンツ執筆完了
+- [x] GitHubリポジトリにプッシュ済み
+- [x] バージョン管理整理（旧版削除、VERSION_INDEX.md作成）
+
+### 未完了（今後の課題）
+- [ ] サンプルデータファイル作成
+- [ ] 完成コード（.py）の分離
+- [ ] 第0章の修正（オーナーが対応予定）
+- [ ] 第3章の成果物をより魅力的に改善
+
+---
 
 ## ファイル構成
 
 ```
 gaspython/
-├── README.md                    # プロジェクト概要
-├── docs/
-│   ├── 00_course_overview.md    # 講座全体設計
-│   ├── 01_curriculum.md         # カリキュラム詳細（6章構成）
-│   ├── 02_sources.md            # 情報源マッピング
-│   └── 03_differentiation.md    # 差別化ポイント
-└── research/
-    ├── frustration_points.md    # Python挫折ポイント調査
-    ├── gas_python_comparison.md # GAS vs Python比較
-    └── gas_python_integration.md # GAS×Python連携方法
+├── README.md
+├── HANDOFF.md              # この引き継ぎファイル
+├── WORKLOG_SIMPLE.md       # 作業ログ
+├── content/
+│   ├── VERSION_INDEX.md    # ★ 最新ファイル一覧（これを見れば分かる）
+│   └── chapters/
+│       ├── chapter00_introduction_v2.md
+│       ├── chapter02_ai_partner_v2.md
+│       ├── section_1-*_v2.md (6ファイル)
+│       ├── section_3-*_v2.md (6ファイル)
+│       ├── section_4-*_v2.md (7ファイル)
+│       └── section_5-*_v2.md (4ファイル)
+├── docs/                   # 企画ドキュメント
+└── research/               # リサーチ資料
 ```
 
-## 完了済みタスク
+**最新版の見分け方**: `_v2.md` が付いているファイルが本番品質版
 
-- [x] GAS講座成功要因の分析
-- [x] 講座コンセプト策定（4本柱）
-- [x] 6章構成カリキュラム設計
-- [x] 情報源リサーチ（全章分）
-- [x] GAS vs Python比較
-- [x] GAS×Python連携方法調査
-- [x] 差別化ポイント整理
-- [x] OS対応方針決定（Windows優先、Mac補足）
+---
 
-## 次のタスク（優先度順）
+## 改善課題
 
-### 優先度A（必須）
-1. GitHubへのプッシュ
-2. 各章の詳細設計（節ごとの学習目標・演習課題）
+### 課題1: サンプルデータがない ★★★★★
+```
+現状:
+・コード内で「このExcelを用意してください」と書いているが実ファイルがない
+・読者が自分でデータを作る必要がある → 離脱の原因
 
-### 優先度B（推奨）
-3. 第2章「AI活用メソッド」の具体化
-4. サンプルコンテンツ作成（特定章を実際に書く）
+対策案:
+content/samples/
+├── 社員名簿.xlsx
+├── 売上データ_1月.xlsx
+├── 売上データ_2月.xlsx
+├── 売上データ_3月.xlsx
+└── 完成レポート_見本.xlsx
+```
 
-### 優先度C（検討）
-5. 講座形式の検討（テキスト/動画/ハンズオン比率）
-6. 料金設定・販売戦略
+### 課題2: 第3章の成果物が地味 ★★★★☆
+```
+現状:
+・「売上集計システム」は教材としては良いが購買訴求が弱い
+
+改善案（検討中）:
+・「100枚のExcelを3秒で統合するツール」
+・「売上データから自動でグラフ付きレポートを生成」
+・「exe化して経理部に配布」
+
+→ 見出しとして使える成果物に
+```
+
+### 課題3: 完成コードの分離 ★★★☆☆
+```
+現状:
+・コードはMarkdown内に埋め込まれている
+・コピペはできるが、ダウンロードして即実行はできない
+
+対策案:
+content/code/
+├── chapter03/
+│   ├── 01_excel_read.py
+│   ├── 02_pandas_basic.py
+│   ├── 03_batch_merge.py      ← 100枚統合ツール
+│   └── 04_report_generator.py ← レポート生成
+└── chapter04/
+    ├── exe_builder.py
+    └── ...
+```
+
+---
+
+## 競合比較
+
+| 項目 | 本講座 | Udemy | PyQ | YouTube |
+|------|--------|-------|-----|---------|
+| 価格 | 3,000-5,000円想定 | 1,500-2,000円 | 月3,040円 | 無料 |
+| GAS比較 | ◎ | × | × | △ |
+| 環境構築 | Colab先行◎ | ローカル先行 | ブラウザ完結 | 様々 |
+| venv解説 | ◎徹底 | △あっさり | × | △ |
+| サポート | 要検討 | Q&A機能 | なし | コメント欄 |
+
+**勝てるポイント**: GASからの移行、venvの徹底
+**弱点**: サポート、サンプルデータ、動画なし
+
+---
+
+## 品質基準
+
+本番品質コンテンツの要件:
+- コピペで実行可能なコード
+- 実際の出力例
+- 行ごとのコード解説
+- GASとの比較コード
+- エラー対処法セクション
+
+基準となるファイル: `section_3-4_sales_system_v2.md`
+
+---
 
 ## 主要な決定事項
 
@@ -60,16 +130,10 @@ gaspython/
 | 環境 | 第1-3章 Colab → 第4-5章 ローカル |
 | OS | Windows優先、Mac補足 |
 | 環境管理 | venv必須、Anaconda非推奨 |
-| 主要情報源 | Python-izm（第1・3章）、gspread系記事（第5章） |
-
-## プッシュコマンド
-
-zipは既にgit初期化・コミット済みなので：
-
-```bash
-cd gaspython
-git remote add origin https://github.com/taolido/gaspython.git
-git push -u origin main
-```
+| 第0章 | オーナーが修正予定（現状維持） |
 
 ---
+
+## GitHubリポジトリ
+
+https://github.com/taolido/gaspython
