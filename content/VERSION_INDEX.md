@@ -39,16 +39,21 @@
 ---
 
 ## 第3章：Excel×Pythonで成果を出す
-**形式**: セクション分割版
+**形式**: セクション分割版（7ファイル）
 
-| ファイル | 内容 |
-|---------|------|
-| `chapters/section_3-1_openpyxl_v2.md` | openpyxl入門 |
-| `chapters/section_3-2_pandas_v2.md` | pandas入門 |
-| `chapters/section_3-3_time_limit_v2.md` | GASの6分制限を超える |
-| `chapters/section_3-4_sales_system_v2.md` | 売上集計システム |
-| `chapters/section_3-5_batch_processing_v2.md` | 複数ファイル一括処理 |
-| `chapters/section_3-6_ai_prompts_v2.md` | AIプロンプトテンプレート |
+| ファイル | 内容 | 成果物 |
+|---------|------|--------|
+| `chapters/section_3-0_chapter_intro_v2.md` | 章のイントロ・完成イメージ | - |
+| `chapters/section_3-1_openpyxl_v2.md` | openpyxl入門 | Excel読み書き |
+| `chapters/section_3-2_pandas_v2.md` | pandas入門 | データ分析基礎 |
+| `chapters/section_3-3_time_limit_v2.md` | GASの6分制限を超える | 大量データ処理 |
+| `chapters/section_3-4_sales_report_v2.md` | **グラフ付き売上レポート** | レポート自動生成 |
+| `chapters/section_3-5_excel_merge_v2.md` | **100枚Excel統合ツール** | 3秒で100ファイル統合 |
+| `chapters/section_3-6_ai_prompts_v2.md` | AIプロンプトテンプレート | - |
+
+**★ 第3章の目玉:**
+- 「100枚のExcelを3秒で統合」
+- 「グラフ付き売上レポート自動生成」
 
 ---
 
@@ -79,39 +84,23 @@
 
 ---
 
+## サンプルデータ
+
+```
+content/samples/
+├── sales_data_202401.xlsx       # 第3章: 売上データ（1月分）
+├── sales_data_202402.xlsx       # 第3章: 売上データ（2月分）
+├── sales_data_202403.xlsx       # 第3章: 売上データ（3月分）
+├── employee_list.xlsx           # 社員名簿
+├── product_master.xlsx          # 商品マスター
+└── README.md                    # サンプルデータの説明
+```
+
+---
+
 ## ファイル命名規則
 
 ```
 chapter[章番号]_[英語名]_v2.md     → 統合版（複数セクションを1ファイルに）
 section_[章]-[節]_[英語名]_v2.md  → 分割版（セクションごとに1ファイル）
-```
-
-## 削除済みファイル（旧版）
-
-以下は本番品質版作成前のドラフトで、削除済み：
-- ~~chapter01_colab_start.md~~
-- ~~chapter03_excel_python.md~~
-
----
-
-## 未作成（今後の課題）
-
-### サンプルデータ
-```
-content/samples/
-├── 社員名簿.xlsx          ← 未作成
-├── 売上データ_1月.xlsx    ← 未作成
-├── 売上データ_2月.xlsx    ← 未作成
-└── ...
-```
-
-### 完成コード
-```
-content/code/
-├── chapter03/
-│   ├── excel_merge.py     ← 100枚Excel統合ツール
-│   ├── sales_report.py    ← グラフ付きレポート生成
-│   └── ...
-└── chapter04/
-    └── ...
 ```

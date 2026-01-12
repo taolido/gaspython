@@ -1,0 +1,16 @@
+﻿社員ID,氏名,部署,役職,入社日,メール
+E001,田中太郎,営業部,部長,2015/04/01,tanaka@example.com
+E002,鈴木花子,営業部,課長,2017/04/01,suzuki@example.com
+E003,佐藤一郎,営業部,主任,2019/04/01,sato@example.com
+E004,高橋美咲,営業部,一般,2021/04/01,takahashi@example.com
+E005,伊藤健太,開発部,部長,2014/04/01,ito@example.com
+E006,渡辺直美,開発部,課長,2016/04/01,watanabe@example.com
+E007,山本大輔,開発部,主任,2018/04/01,yamamoto@example.com
+E008,中村由美,開発部,一般,2020/04/01,nakamura@example.com
+E009,小林誠,開発部,一般,2022/04/01,kobayashi@example.com
+E010,加藤明日香,総務部,部長,2013/04/01,kato@example.com
+E011,吉田浩二,総務部,課長,2016/04/01,yoshida@example.com
+E012,山田恵子,総務部,一般,2019/04/01,yamada@example.com
+E013,松本健,マーケティング部,部長,2015/04/01,matsumoto@example.com
+E014,井上舞,マーケティング部,主任,2018/04/01,inoue@example.com
+E015,木村拓也,マーケティング部,一般,2021/04/01,kimura@example.com
