@@ -88,13 +88,19 @@
 
 ```
 content/samples/
-├── sales_data_202401.xlsx       # 第3章: 売上データ（1月分）
-├── sales_data_202402.xlsx       # 第3章: 売上データ（2月分）
-├── sales_data_202403.xlsx       # 第3章: 売上データ（3月分）
-├── employee_list.xlsx           # 社員名簿
-├── product_master.xlsx          # 商品マスター
-└── README.md                    # サンプルデータの説明
+├── sales_data_202401.csv        # 売上データ（1月分）
+├── sales_data_202402.csv        # 売上データ（2月分）
+├── sales_data_202403.csv        # 売上データ（3月分）
+├── employee_list.csv            # 社員名簿
+├── product_master.csv           # 商品マスター
+├── merge_sample/                # 統合練習用（10ファイル）
+│   └── sales_2023*.csv
+├── generate_csv.py              # CSV生成スクリプト
+├── generate_xlsx_colab.py       # xlsx生成（Colab用）
+└── README.md                    # 使い方説明
 ```
+
+**xlsx形式が必要な場合**: `generate_xlsx_colab.py` をColabで実行
 
 ---
 
